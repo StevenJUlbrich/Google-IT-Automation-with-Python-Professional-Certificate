@@ -2,7 +2,9 @@
 
 import csv
 import operator
+import os
 import re
+import sys
 
 FIND_ERROR = r'(ERROR ([\w \[]*)) '
 MATCH_USER = r'\((.*?)\)'
@@ -114,9 +116,6 @@ def add_zeros():
 
 
 def main():
-    error_counter = {}
-    error_user = {}
-    info_user = {}
 
     search_file('syslog.log')
 
