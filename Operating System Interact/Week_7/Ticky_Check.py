@@ -1,4 +1,4 @@
-#! /user/bin/env ptython3
+#!/usr/bin/env python3
 
 import csv
 import operator
@@ -75,16 +75,6 @@ def sort_list(op: int, list: dict):
         s = sorted(list.items(), key=operator.itemgetter(0))
     return s
 
-# This is an extra function which will read the value of a user in the error dictionary and return its value if key exists
-
-
-def getErrValue(keyV):
-    for key, value in error_user:
-        if key is keyV:
-            return value
-    return 0
-
-
 def write_error_messages(error_counter_info):
     with open('error_message.csv', 'w', newline='') as output:
         fieldnames = ['Error', 'Count']
@@ -111,7 +101,7 @@ def field_names_header():
 
 def main():
 
-    search_file('Operating System Interact\Week_7\syslog.log')
+    search_file('syslog.log')
 
     error_counter_1 = sort_list(1, error_counter)
     info_user_1 = sort_list(2, info_user)
